@@ -1,6 +1,6 @@
 :root {
-  --gutter-width: 1rem;
-  --outer-margin: 2rem;
+  --gutter-width: 2rem;
+  --outer-margin: 1rem;
   --gutter-compensation: calc((var(--gutter-width) * 0.5) * -1);
   --half-gutter-width: calc((var(--gutter-width) * 0.5));
   --xs-min: 30;
@@ -11,9 +11,9 @@
   --screen-sm-min: var(--sm-min)em;
   --screen-md-min: var(--md-min)em;
   --screen-lg-min: var(--lg-min)em;
-  --container-sm: calc(var(--sm-min) + var(--gutter-width));
-  --container-md: calc(var(--md-min) + var(--gutter-width));
-  --container-lg: calc(var(--lg-min) + var(--gutter-width));
+  --container-sm: calc(var(--sm-min) - 2 * var(--outer-margin));
+  --container-md: calc(var(--md-min) - 2 * var(--outer-margin));
+  --container-lg: calc(var(--lg-min) - 2 * var(--outer-margin));
 }
 
 @custom-media --sm-viewport only screen and (min-width: 48em);
@@ -23,9 +23,6 @@
 .container-fluid, .container {
   margin-right: auto;
   margin-left: auto;
-}
-
-.container-fluid {
   padding-right: var(--outer-margin, 2rem);
   padding-left: var(--outer-margin, 2rem);
 }
